@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Samsoft</title>
+    <link href="{% static 'css/base.css '%}" ref="stylesheet">
+</head>
+<body>
+<nav>
+    <ul class="menu">
+        <li class="menu-item"><a href="/home/">Home</a></li>
+        <li class="menu-item"><a href="/services/">Services</a></li>
+        <li class="menu-item"><a href="/enquiry/">Enquiry</a></li>
+        <li class="menu-item"><a href="/feedback/">Feedback</a></li>
+        <li class="menu-item"><a href="/gallary/">Gallary</a></li>
+    </ul>
+</nav>
+<h1 style="text-align: center; color: red">Welcome to SamSoft</h1>
+{% block content %}
+{% endblock %}
+<footer>
+    <h4 id="footer">$copy; CopyRight ©Samyak</h4>
+</footer>
+</body>
+</html>

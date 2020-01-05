@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+<html>
+<head>
+    <title>Service page</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% block content %}
+    <style>
+    th td{
+        padding: 10px 20px;
+        text-align: center;
+    }
+    </style>
+    {% if services %}
+    <center>
+    <table border="3px">
+        <thead>
+        <tr>
+            <th>Course_Id</th>
+            <th>Course_Name</th>
+            <th>Course_Duration</th>
+            <th>Course_Start_Date</th>
+            <th>Course_Start_Time</th>
+            <th>Course_Trainer_Name</th>
+            <th>Course_Trainer_Exp</th>
+        </tr>
+        </thead>
+        {% for i in services %}
+        <tbody>
+        <tr>
+            <td>{{ i.course_id }}</td>
+            <td>{{ i.course_name }}</td>
+            <td>{{ i.course_duration }}</td>
+            <td>{{ i.course_start_date }}</td>
+            <td>{{ i.course_start_time }}</td>
+            <td>{{ i.course_trainer_name }}</td>
+            <td>{{ i.course_trainer_exp }}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    </center>
+    {% else %}
+    <h1 style="text-align: center; color: orange"> No courses are available now please check some time</h1>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>
